@@ -36,7 +36,7 @@ const AppLayout = () => {
           items={menuItems}
         />
       </Header>
-      <Content className="p-6">
+      <Content>
         <Routes>
           <Route path="/" element={<ApplyPage />} />
           <Route path="/submissions" element={<SubmissionsPage />} />
