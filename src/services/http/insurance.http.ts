@@ -18,7 +18,7 @@ class InsuranceHttpService extends HttpService {
     return response?.data;
   }
 
-  async getSubmissions(): Promise<InsuranceGetSubmissionsResponseDto[]> {
+  async getSubmissions(): Promise<InsuranceGetSubmissionsResponseDto> {
     const response = await this.httpService.get("forms/submissions");
     return response?.data;
   }

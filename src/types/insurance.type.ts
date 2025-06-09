@@ -37,7 +37,7 @@ type Visibility = {
   condition: string;
 };
 
-type Data = {
+export type Data = {
   id: string;
   [key: string]: string | number;
 };
