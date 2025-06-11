@@ -4,7 +4,12 @@ A dynamic React.js web application that allows users to apply for various types 
 
 ## 🚀 Features
 
-### ✅ Smart Dynamic Form 
+### 🎨 Theme Switcher
+
+- Light / Dark / Auto modes
+- Auto respects OS preferences
+
+### ✅ Smart Dynamic Form
 
 Fetches form structure from API — no hardcoded fields
 
