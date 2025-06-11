@@ -5,6 +5,8 @@ import InsuranceService from "@root/services/http/insurance.http";
 import type { InsuranceGetSubmissionsResponseDto } from "@root/types/insurance.type";
 // Hooks
 import { useMessageApi } from "@root/contexts/messageProvider";
+// Utils
+import { getServerError } from "@root/utils/get-server-error";
 
 export function useSubmissions() {
   const [submissions, setSubmissions] =
@@ -22,12 +24,12 @@ export function useSubmissions() {
     try {
       const data = await InsuranceService.getSubmissions();
       setSubmissions(data);
-    } catch (error) {
-      messageApi.error("Submission failed");
+    } catch (error: unknown) {
+      messageApi.error(getServerError(error, "Submission failed"));
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [messageApi]);
 
   useEffect(() => {
     getSubmissions();

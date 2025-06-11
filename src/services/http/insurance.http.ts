@@ -1,4 +1,4 @@
-import { HttpService } from ".";
+import { HttpService } from "..";
 // Types
 import type {
   InsuranceGetSubmissionsResponseDto,
@@ -23,8 +23,10 @@ class InsuranceHttpService extends HttpService {
     return response?.data;
   }
 
-  async submitFormData(): Promise<InsuranceFormStructureSubmitResponseDto> {
-    const response = await this.httpService.post("forms/submit");
+  async submitFormData(
+    payload: Record<string, unknown>
+  ): Promise<InsuranceFormStructureSubmitResponseDto> {
+    const response = await this.httpService.post("forms/submit", payload);
     return response?.data;
   }
 }

@@ -37,10 +37,12 @@ const AppLayout = () => {
         />
       </Header>
       <Content>
-        <Routes>
-          <Route path="/" element={<ApplyPage />} />
-          <Route path="/submissions" element={<SubmissionsPage />} />
-        </Routes>
+        <div className="max-w-6xl mx-auto px-4 py-8">
+          <Routes>
+            <Route path="/" element={<ApplyPage />} />
+            <Route path="/submissions" element={<SubmissionsPage />} />
+          </Routes>
+        </div>
       </Content>
     </Layout>
   );

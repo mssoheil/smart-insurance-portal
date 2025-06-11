@@ -9,7 +9,7 @@ const SubmissionsPage = () => {
   const { columns, data, loading, calledAPiRef } = useSubmissions();
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8">
+    <>
       <Typography.Title level={3} className="!text-gray-600 !mb-6">
         Submitted Applications
       </Typography.Title>
@@ -18,7 +18,7 @@ const SubmissionsPage = () => {
       ) : (
         <Table columns={columns ?? []} data={data ?? []} loading={loading} />
       )}
-    </div>
+    </>
   );
 };
 

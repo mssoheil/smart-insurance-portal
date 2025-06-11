@@ -13,7 +13,7 @@ export function useTable(columns: string[], data: SorterItem[]) {
     if (columns.length && visibleColumns.length === 0) {
       setVisibleColumns(columns);
     }
-  }, [columns]);
+  }, [columns, visibleColumns.length]);
 
   const filteredData = useMemo(() => {
     if (!search) {

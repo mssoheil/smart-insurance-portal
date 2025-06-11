@@ -14,13 +14,19 @@ export interface InsuranceGetSubmissionsResponseDto {
   columns: string[];
 }
 
-type FormStructureField = {
+export interface Validation {
+  min?: number;
+  max?: number;
+}
+
+export type FormStructureField = {
   id: string;
   type: string;
   label: string;
   options?: string[];
   required?: boolean;
   visibility?: Visibility;
+  validation?: Validation;
   fields?: FormStructureField[];
   dynamicOptions?: DynamicOption;
 };
