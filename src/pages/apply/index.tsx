@@ -1,7 +1,7 @@
 // UI frameworks
 import { Divider, Empty, Spin } from "antd";
 // Shared components
-import { FormGenerator } from "@root/components/table/form-generator";
+import { FormGenerator } from "@root/components/form-generator";
 // Hooks
 import { useApply } from "@root/pages/apply/index.hook";
 

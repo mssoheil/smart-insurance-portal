@@ -1,5 +1,5 @@
 // UI frameworks
-import { Empty, Typography } from "antd";
+import { Empty } from "antd";
 // Hooks
 import { useSubmissions } from "./index.hook";
 // Shared components
@@ -9,16 +9,14 @@ const SubmissionsPage = () => {
   const { columns, data, loading, calledAPiRef } = useSubmissions();
 
   return (
-    <>
-      <Typography.Title level={3} className="!text-gray-600 !mb-6">
-        Submitted Applications
-      </Typography.Title>
+    <div className="mx-auto max-w-[90vw] lg:max-w-[80vw] my-2 lg:my-4">
+      <h3 className="text-xl font-bold mb-4">Submitted Applications</h3>
       {!loading && !data?.length && calledAPiRef.current ? (
         <Empty description="No submissions found" />
       ) : (
         <Table columns={columns ?? []} data={data ?? []} loading={loading} />
       )}
-    </>
+    </div>
   );
 };
 

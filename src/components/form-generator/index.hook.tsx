@@ -11,9 +11,8 @@ import {
   InputNumber,
 } from "antd";
 // Utils
-import { addComma } from "@root/utils/add-comma.util";
 import { getServerError } from "@root/utils/get-server-error";
-import { generateRules } from "@root/components/table/form-generator/index.util";
+import { generateRules } from "@root/components/form-generator/index.util";
 // Types
 import type {
   FormStructureField,
@@ -172,10 +171,7 @@ export function useFormGenerator(
       case "number":
         return (
           <Form.Item key={field.id} {...commonProps}>
-            <InputNumber
-              formatter={addComma}
-              parser={(value) => (value ? value.replace(/,/g, "") : "")}
-            />
+            <InputNumber />
           </Form.Item>
         );
       case "date":

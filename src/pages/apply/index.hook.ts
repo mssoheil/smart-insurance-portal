@@ -5,7 +5,7 @@ import InsuranceService from "@root/services/http/insurance.http";
 import { useMessageApi } from "@root/contexts/messageProvider";
 // Types
 import type { InsuranceGetFormStructureResponseDto } from "@root/types/insurance.type";
-import type { FormValues } from "@root/components/table/form-generator";
+import type { FormValues } from "@root/components/form-generator";
 // Utils
 import { getServerError } from "@root/utils/get-server-error";
 

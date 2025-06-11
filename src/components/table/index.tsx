@@ -23,7 +23,7 @@ export const Table = ({ columns, data, loading, pageSize = 10 }: Props) => {
   } = useTable(columns, data);
 
   return (
-    <Card className="p-4">
+    <Card className="lg:my-6 sm:[&_.ant-card-body]:p-6 [&_.ant-card-body]:p-4">
       <Space direction="vertical" className="w-full" size="large">
         <Space wrap className="w-full">
           <Select
@@ -56,6 +56,7 @@ export const Table = ({ columns, data, loading, pageSize = 10 }: Props) => {
           loading={loading}
           dataSource={filteredData}
           columns={columnDefinitions}
+          scroll={{ x: "max-content" }}
           pagination={{ pageSize, position: ["bottomCenter"] }}
         />
       </Space>

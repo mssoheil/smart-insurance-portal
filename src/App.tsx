@@ -37,7 +37,7 @@ const AppLayout = () => {
         />
       </Header>
       <Content>
-        <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="lg:max-w-6xl mx-auto px-2 lg:px-4 py-2 lg:py-8">
           <Routes>
             <Route path="/" element={<ApplyPage />} />
             <Route path="/submissions" element={<SubmissionsPage />} />

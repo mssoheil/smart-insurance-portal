@@ -1,7 +1,7 @@
 // UI frameworks
 import { Button, Card, Form, Space } from "antd";
 // Hooks
-import { useFormGenerator } from "@root/components/table/form-generator/index.hook";
+import { useFormGenerator } from "@root/components/form-generator/index.hook";
 // Types
 import type { InsuranceGetFormStructureResponseDto } from "@root/types/insurance.type";
 
@@ -28,7 +28,7 @@ export const FormGenerator = ({ formData, onSubmit }: Props) => {
     handlers: { renderField, handleValuesChange },
   } = useFormGenerator(formData);
   return (
-    <div className="mx-auto max-w-[80vw] my-6">
+    <div className="mx-auto max-w-[90vw] lg:max-w-[80vw] my-2 lg:my-4">
       <Form
         form={form}
         layout="vertical"

@@ -1,5 +1,3 @@
-// Utils
-import { addComma } from "@root/utils/add-comma.util";
 // Types
 import type { Rule } from "antd/es/form";
 import type { FormStructureField } from "@root/types/insurance.type";
@@ -23,9 +21,7 @@ export const generateRules = (
       rules.push({
         min,
         type: fieldType,
-        message: `${commonMessage}${field.label} must be at least ${addComma(
-          min
-        )}`,
+        message: `${commonMessage}${field.label} must be at least ${min}`,
       });
     }
 
@@ -33,9 +29,7 @@ export const generateRules = (
       rules.push({
         max,
         type: fieldType,
-        message: `${commonMessage}${field.label} must be at most ${addComma(
-          max
-        )}`,
+        message: `${commonMessage}${field.label} must be at most ${max}`,
       });
     }
   }
