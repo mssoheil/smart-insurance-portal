@@ -10,12 +10,12 @@ import "antd/dist/reset.css";
 import { ThemeSwitcher } from "@root/components/theme-switcher/index.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <MessageProvider>
-      <App />
-      <div className="fixed bottom-5 left-[25px]">
-        <ThemeSwitcher />
-      </div>
-    </MessageProvider>
-  </StrictMode>
+	<StrictMode>
+		<MessageProvider>
+			<App />
+			<div className="fixed bottom-5 left-[25px]">
+				<ThemeSwitcher />
+			</div>
+		</MessageProvider>
+	</StrictMode>
 );

@@ -1,37 +1,17 @@
-import { createContext, useContext, useMemo } from "react";
-// UI frameworks
 import { message } from "antd";
-
-const MessageContext = createContext<ReturnType<
-  typeof message.useMessage
-> | null>(null);
+import { MessageContext } from "@root/contexts/message.context";
 
 export const MessageProvider = ({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) => {
-  const [messageApi, contextHolder] = message.useMessage();
+	const [messageApi, contextHolder] = message.useMessage();
 
-  const value = useMemo(
-    () => [messageApi, contextHolder] as const,
-    [messageApi, contextHolder]
-  );
-
-  return (
-    <MessageContext.Provider value={value}>
-      {contextHolder}
-      {children}
-    </MessageContext.Provider>
-  );
-};
-
-export const useMessageApi = () => {
-  const context = useContext(MessageContext);
-
-  if (!context) {
-    throw new Error("useMessageApi must be used within a MessageProvider");
-  }
-
-  return context;
+	return (
+		<MessageContext.Provider value={[messageApi, contextHolder]}>
+			{contextHolder}
+			{children}
+		</MessageContext.Provider>
+	);
 };
